@@ -1,0 +1,20 @@
+TOKEN
+	Name  = "BOARD5_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable BOARD5 support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	Master = Yes
+	Token = "OEMBOARD_SEL" "=" "5"
+End
+
+PATH
+	Name  = "OEMBOARD_PLATFORM_DIR"
+End
+
+MODULE
+	Help  = "Include BOARD5.mak to Project"
+	File  = "BOARD4.mak"
+End
+

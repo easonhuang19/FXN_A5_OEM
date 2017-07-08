@@ -1,0 +1,28 @@
+
+TOKEN
+	Name  = "OEMBOARD_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable Common setting support in Project. \Both Wistron and AMI need to use this setting on the project board"
+	TokenType = Boolean
+	Master = Yes
+End
+
+TOKEN
+	Name  = "OEMBOARD_SEL"
+	Value  = "1"
+	Help  = ""
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "  ====== GPIO Define ======  "
+	TokenType = Integer
+End
+
+TOKEN
+	Name  = " "
+	TokenType = Integer
+End

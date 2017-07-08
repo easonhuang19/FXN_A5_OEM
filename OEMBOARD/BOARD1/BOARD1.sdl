@@ -1,0 +1,364 @@
+PCIDEVICE
+	Title  = "On Board Video(Legacy)"
+	Parent  = "PCIE Root Port #7"
+	Attribute  = "0x0"
+	Dev_type  = "PciDevice"
+	Dev  = 00h
+	Fun  = 00h
+	SleepNum  = 01h
+	ROMFile  = "AmiCRBPkg/MATROXVIDEOOPROM.BIN"
+	IntA = 	LNKA; 16
+	IntB = 	LNKB; 17
+	IntC = 	LNKC; 18
+	IntD = 	LNKD; 19
+	DeviceType = OnBoard
+	PCIBusSize = 32bit
+	OptionROM = Yes
+	ROMMain = No
+	PCIExpress = Yes
+	LegacyRom = Yes
+	FFSFileName  = "ROM Storage"
+	ROMSectionGuid  = "7301762E-4BF3-4b06-ADA0-766041BE36AF"
+End
+
+
+#Virtual = Yes
+PCIDEVICE
+	Title  = "On Board Video(UEFI)"
+	Parent  = "PCIE Root Port #7"
+	Attribute  = "0x0"
+	Dev_type  = "PciDevice"
+	Dev  = 00h
+	Fun  = 00h
+	SleepNum  = 01h
+	ROMFile  = "OEMEM/Addon/MUF20150120.V26.efi"
+	DeviceID  = 0522h
+	VendorID  = 0102bh
+	DeviceType = OnBoard
+	PCIBusSize = 32bit
+	OptionROM = Yes
+	ROMMain = No
+	LinkDevice = Yes
+	UefiRom = Yes
+	FFSFileName  = "ROM Storage"
+	ROMSectionGuid  = "3d3e3ddd-b0f9-49ff-a714-c80ebf2feef4"
+End
+
+TOKEN
+	Name  = "BOARD1_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable BOARD1 support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	Master = Yes
+	Token = "OEMBOARD_SEL" "=" "1"
+End
+
+TOKEN
+	Name  = "PILOT3_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable Pilot3 support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "DEBUG_MODE"
+	Value  = "0"
+	TokenType = Boolean
+	TargetMAK = Yes
+End
+
+TOKEN
+	Name  = "OPTIMIZATION"
+	Value  = "0"
+	Help  = "Enables/disables C compiler optimization."
+	TokenType = Boolean
+	TargetMAK = Yes
+End
+
+TOKEN
+	Name  = "FV_BB_SIZE"
+	Value  = "0x300000"
+	Help  = "Size of the FV_BB area"
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+	Range  = "From: 0 To: FLASH_SIZE - NVRAM_SIZE - FV_MAIN_SIZE"
+	Token = "OPTIMIZATION" "=" "0"
+End
+
+TOKEN
+	Name  = "SERIAL_DEBUGGER_SUPPORT"
+	Value  = "0"
+	Help  = "Switch for Enabling Serial Debugger support in the project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "PLATFORM_SELECT"
+	Value  = "2"
+	Help  = "Selects which platform to build for.  1=TrabucoCanyon, 2=BeverlyCove, 3=CamelbackMountain, 4=PiestewaPeak."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetMAK = Yes
+End
+
+TOKEN
+	Name  = "SETUP_BBS_POPUP_ENABLE"
+	Value  = "1"
+	Help  = "Enable or disable the SETUP_BBS_POPUP_ENABLE."
+	TokenType = Boolean
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "POPUP_MENU_ENTER_SETUP"
+	Value  = "1"
+	Help  = "1 => Allows to enter setup from BBS popup"
+	TokenType = Boolean
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "POPUP_MENU_ENTRY_UNICODE"
+	Value  = "0x0000"
+	Help  = "Set to one of the defined constants from EFI_SIMPLE_TEXT_INPUT protocol or a character value like L'a'"
+	TokenType = Expression
+	TargetH = Yes
+	Token = "SETUP_BBS_POPUP_ENABLE" "!=" "0"
+End
+
+TOKEN
+	Name  = "POPUP_MENU_ENTRY_SCAN"
+	Value  = "EFI_SCAN_F7"
+	Help  = "Set to one of the defined constants from EFI_SIMPLE_TEXT_INPUT protocol.Remember to check STR_BBS_POPUP_SREDIR in Terminal.uni if using Serial Redirection. "
+	TokenType = Expression
+	TargetH = Yes
+	Token = "SETUP_BBS_POPUP_ENABLE" "!=" "0"
+End
+
+TOKEN
+	Name  = "POPUP_MENU_ENTRY_SHIFT_STATE"
+	Value  = "0"
+	Help  = "Set to one of the defined constants from AMI_KEY_CODE_PROTOCOL."
+	TokenType = Expression
+	TargetH = Yes
+	Token = "SETUP_BBS_POPUP_ENABLE" "!=" "0"
+End
+
+TOKEN
+    Name  = "RESERVED_PAGE_ROUTE"
+    Value  = "0"
+    Help  = "Off:FEnable Port 80 decoding to LPC.\On:Enable Port 80 decoding to PCI."
+    TokenType = Boolean
+    TargetEQU = Yes
+    TargetH = Yes
+End
+
+TOKEN
+	Name  = "  ====== SPS Setting ======  "
+	Value  = "0"
+	TokenType = Integer
+End
+
+TOKEN
+	Name  = "Grangeville_XML_config"
+	Value  = "DRACO_NM.xml"
+	TokenType = Expression
+	TargetMAK = Yes
+End
+
+TOKEN
+	Name  = "  ====== GPIO Define ======  "
+	Value  = "0"
+	TokenType = Integer
+End
+
+TOKEN
+	Name  = "USE_AMI_GPIO_PROGRAMMING"
+	Value  = "1"
+	Help  = "0 = Use Intel's GPIO programming.  1 = Use AMI SDL GPIO programming."
+	TokenType = Integer
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "OEM_GPIO_NATIVE"
+	Value  = "0"
+	Help  = "Native Signal is TACH1.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "OEM_GPIO_INPUT"
+	Value  = "$(GPI) + $(GPIO_IO)"
+	Help  = "Native Signal is TACH1.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "OEM_GPIO_OUTPUT_HIGH"
+	Value  = "$(GPO_HIGH)"
+	Help  = "Native Signal is TACH1.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "OEM_GPIO_OUTPUT_LOW"
+	Value  = "$(GPO_LOW)"
+	Help  = "Native Signal is TACH1.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO1_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 01"
+	Help  = "Native Signal is TACH1.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO6_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 06"
+	Help  = "Native Signal is TACH2.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO7_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 07"
+	Help  = "Native Signal is TACH3.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO16_CONFIG"
+	Value  = "$(OEM_GPIO_OUTPUT_HIGH) + 16"
+	Help  = "Native Signal is SRC5CLKRQ#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO17_CONFIG"
+	Value  = "$(OEM_GPIO_NATIVE) + 17"
+	Help  = "Native Signal is SATA0GP.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO26_CONFIG"
+	Value  = "$(OEM_GPIO_OUTPUT_HIGH) + 26"
+	Help  = "Native Signal is S4_STATE#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO40_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 40"
+	Help  = "Native Signal is TACH3.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO50_CONFIG"
+	Value  = "$(OEM_GPIO_OUTPUT_LOW) + 50"
+	Help  = "Native Signal is SRC5CLKRQ#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO54_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 54"
+	Help  = "Native Signal is TACH3.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO59_CONFIG"
+	Value  = "$(OEM_GPIO_INPUT) + 59"
+	Help  = "Native Signal is TACH3.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO65_CONFIG"
+	Value  = "$(OEM_GPIO_NATIVE) + 65"
+	Help  = "Native Signal is CLKRUN#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO68_CONFIG"
+	Value  = "$(OEM_GPIO_NATIVE) + 68"
+	Help  = "Native Signal is CLKRUN#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = "GPIO69_CONFIG"
+	Value  = "$(OEM_GPIO_NATIVE) + 69"
+	Help  = "Native Signal is CLKRUN#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
+TOKEN
+	Name  = " "
+	Value  = "0"
+	TokenType = Integer
+End
+
+PATH
+	Name  = "FITC_XML_DIR"
+	Path  = "OEMBOARD\BOARD1"
+End
+
+PATH
+	Name  = "OEMBOARD_PLATFORM_DIR"
+End
+
+MODULE
+	Help  = "Include BOARD1.mak to Project"
+	File  = "BOARD1.mak"
+End
+

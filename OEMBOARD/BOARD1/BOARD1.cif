@@ -1,0 +1,10 @@
+<component>
+	name = "BOARD1"
+	category = Flavor
+	LocalRoot = "OEMBOARD\BOARD1\"
+	RefName = "BOARD1"
+[files]
+"BOARD1.sdl"	
+"BOARD1.mak"	
+"Draco_NM.xml"	
+<endComponent>

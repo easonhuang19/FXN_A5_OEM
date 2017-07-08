@@ -1,0 +1,15 @@
+<component>
+	name = "OEM BOARD"
+	category = Flavor
+	LocalRoot = "OEMBOARD"
+	RefName = "OEMBOARD"
+[files]
+"OEMBOARD.SDL"
+"OEMBOARD.MAK"
+[parts]
+"BOARD1"
+"BOARD2"
+"BOARD3"
+"BOARD4"
+"BOARD5"
+<endComponent>

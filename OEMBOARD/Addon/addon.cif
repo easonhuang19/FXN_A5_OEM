@@ -1,0 +1,9 @@
+<component>
+	name = "Addon"
+	category = Flavor
+	LocalRoot = "OEMEM\Addon\"
+	Rank = 100
+	RefName = "Addon"
+[files]
+"MUF20150120.V26.efi"		
+<endComponent>

@@ -1,0 +1,51 @@
+TOKEN
+	Name  = "OEMEM_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable OEMEM support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+	Master = Yes
+End
+
+TOKEN
+	Name  = "TARGET_ARCH"
+	Value  = "X64"
+	Help  = "Project CPU Architecture"
+	TokenType = Expression
+	TargetMAK = Yes
+	Range  = "IA32 or X64"
+End
+
+TOKEN
+	Name  = "x64_BUILD"
+	Value  = "1"
+	Help  = "Main switch to enable x64 support in Project\DO REBUILD ALL AFTER CHANGING THIS SWITCH!!!"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+	Token = "TARGET_ARCH" "=" "X64"
+End
+
+TOKEN
+	Name  = "x64_BUILD"
+	Value  = "0"
+	Help  = "Main switch to enable x64 support in Project\DO REBUILD ALL AFTER CHANGING THIS SWITCH!!!"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	TargetH = Yes
+	Token = "TARGET_ARCH" "=" "IA32"
+End
+
+TOKEN
+	Name  = "SILENT"
+	Value  = "0"
+	Help  = "Enables/disables silent build mode.\In silent build mode executed commands are not displayed, and certain auxiliary build process messages are suppressed or displayed in a condensed format.\In non-silent build mode executed command are displayed prior to execution, and all auxiliary messages are visible.\Silent build mode is typically faster because less information goes into a build log.\Non-silent mode is useful for debugging of the build issues."
+	TokenType = Boolean
+	TargetMAK = Yes
+End
+
+

@@ -1,0 +1,16 @@
+<component>
+	name = "OEMEM"
+	category = Flavor
+	Rank = 100
+	LocalRoot = "OEMEM\"
+	RefName = "OEMEM"
+[files]	
+"history.txt"	
+"OEMEM.sdl"	
+"OEMEM.dec"	
+#"OEMEM.mak"	
+[parts]
+"Addon"
+[INF]
+
+<endComponent>

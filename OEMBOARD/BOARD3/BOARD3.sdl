@@ -1,0 +1,20 @@
+TOKEN
+	Name  = "BOARD3_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable BOARD3 support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	Master = Yes
+	Token = "OEMBOARD_SEL" "=" "3"
+End
+
+PATH
+	Name  = "OEMBOARD_PLATFORM_DIR"
+End
+
+MODULE
+	Help  = "Include BOARD3.mak to Project"
+	File  = "BOARD3.mak"
+End
+

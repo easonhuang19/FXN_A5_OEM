@@ -1,0 +1,20 @@
+TOKEN
+	Name  = "BOARD2_SUPPORT"
+	Value  = "1"
+	Help  = "Main switch to enable BOARD2 support in Project"
+	TokenType = Boolean
+	TargetEQU = Yes
+	TargetMAK = Yes
+	Master = Yes
+	Token = "OEMBOARD_SEL" "=" "2"
+End
+
+PATH
+	Name  = "OEMBOARD_PLATFORM_DIR"
+End
+
+MODULE
+	Help  = "Include BOARD2.mak to Project"
+	File  = "BOARD2.mak"
+End
+

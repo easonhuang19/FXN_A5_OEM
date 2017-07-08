@@ -1,0 +1,37 @@
+#**********************************************************************
+#**********************************************************************
+#**                                                                  **
+#**        (C)Copyright 1985-2012, American Megatrends, Inc.         **
+#**                                                                  **
+#**                       All Rights Reserved.                       **
+#**                                                                  **
+#**      5555 Oakbrook Parkway, Suite 200, Norcross, GA 30093        **
+#**                                                                  **
+#**                       Phone: (770)-246-8600                      **
+#**                                                                  **
+#**********************************************************************
+#**********************************************************************
+## 
+#
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = OememPkg
+  PACKAGE_GUID                   = 0A602C5B-05A0-40c4-9181-EDCD891D1001
+  PACKAGE_VERSION                = 0.1
+
+[Includes]
+  Include
+  ../Build
+
+[LibraryClasses]
+
+
+[Protocols]
+
+gEfiOememInterfaceProtocolGuid = { 0xa602C5B,0x05A0,0x40c4,{0x91,0x81,0xED,0xCD,0x89,0x1D, 0x00, 0x14 }}
+
+[PPIs]
+
+ 
+[Guids]
