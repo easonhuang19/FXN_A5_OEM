@@ -350,7 +350,7 @@ End
 
 PATH
 	Name  = "FITC_XML_DIR"
-	Path  = "OEMBOARD\BOARD1"
+	Path  = "FXN_A5_OEM\OEMBOARD\BOARD1"
 End
 
 PATH
