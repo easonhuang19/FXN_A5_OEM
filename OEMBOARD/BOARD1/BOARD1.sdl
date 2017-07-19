@@ -31,7 +31,7 @@ PCIDEVICE
 	Dev  = 00h
 	Fun  = 00h
 	SleepNum  = 01h
-	ROMFile  = "OEMEM/Addon/MUF20150120.V26.efi"
+	ROMFile  = "FXN_A5_OEM/OEMEM/Addon/MUF20150120.V26.efi"
 	DeviceID  = 0522h
 	VendorID  = 0102bh
 	DeviceType = OnBoard
@@ -350,7 +350,7 @@ End
 
 PATH
 	Name  = "FITC_XML_DIR"
-	Path  = "FXN_A5_OEM\OEMBOARD\BOARD1"
+	Path  = "FXN_A5_OEM/OEMBOARD/BOARD1"
 End
 
 PATH

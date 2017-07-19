@@ -1,7 +1,7 @@
 <component>
 	name = "Addon"
 	category = Flavor
-	LocalRoot = "OEMEM\Addon\"
+	LocalRoot = "FXN_A5_OEM\OEMEM\Addon\"
 	Rank = 100
 	RefName = "Addon"
 [files]

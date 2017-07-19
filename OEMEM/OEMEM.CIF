@@ -2,7 +2,7 @@
 	name = "OEMEM"
 	category = Flavor
 	Rank = 100
-	LocalRoot = "OEMEM\"
+	LocalRoot = "FXN_A5_OEM\OEMEM\"
 	RefName = "OEMEM"
 [files]	
 "history.txt"	

@@ -1,8 +1,9 @@
 <component>
 	name = "OEM BOARD"
 	category = Flavor
-	LocalRoot = "OEMBOARD"
+	LocalRoot = "FXN_A5_OEM\OEMBOARD"
 	RefName = "OEMBOARD"
+	Rank = 110
 [files]
 "OEMBOARD.SDL"
 "OEMBOARD.MAK"

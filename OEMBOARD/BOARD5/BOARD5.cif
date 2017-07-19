@@ -3,6 +3,7 @@
 	category = Flavor
 	LocalRoot = "OEMBOARD\BOARD5\"
 	RefName = "BOARD5"
+	Rank = 119
 [files]
 "BOARD5.sdl"	
 "BOARD5.mak"
