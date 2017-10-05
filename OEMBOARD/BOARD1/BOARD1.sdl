@@ -156,7 +156,7 @@ End
 TOKEN
     Name  = "RESERVED_PAGE_ROUTE"
     Value  = "0"
-    Help  = "Off:FEnable Port 80 decoding to LPC.\On:Enable Port 80 decoding to PCI."
+    Help  = "Off:Enable Port 80 decoding to LPC.\On:Enable Port 80 decoding to PCI."
     TokenType = Boolean
     TargetEQU = Yes
     TargetH = Yes
@@ -278,6 +278,16 @@ TOKEN
 	TargetEQU = Yes
 	TargetH = Yes
 End
+
+TOKEN
+	Name  = "GPIO25_CONFIG"
+	Value  = "$(OEM_GPIO_OUTPUT_LOW) + 26"
+	Help  = "Native Signal is S4_STATE#.\Low byte = GPIO Number.\BIT8 = Use Config.\BIT9 = Input or Output Config.\BIT10 = GPO level Config.\BIT11 = GPI invert Config."
+	TokenType = Integer
+	TargetEQU = Yes
+	TargetH = Yes
+End
+
 
 TOKEN
 	Name  = "GPIO40_CONFIG"
